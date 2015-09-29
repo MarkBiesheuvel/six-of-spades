@@ -12,13 +12,13 @@ exports.flushBeatsOnePair = function (test) {
 
     test.equal(hands[0].getHandText(), 'One pair', 'Hand #0 is one pair');
 
-    test.ok(hands[1].valueOf() > hands[0].valueOf(), 'Hand #1 is stronger than hand #0');
-    test.ok(hands[2].valueOf() > hands[0].valueOf(), 'Hand #2 is stronger than hand #0');
-    test.ok(hands[3].valueOf() > hands[0].valueOf(), 'Hand #3 is stronger than hand #0');
+    test.ok(+hands[1] > +hands[0], 'Hand #1 is stronger than hand #0');
+    test.ok(+hands[2] > +hands[0], 'Hand #2 is stronger than hand #0');
+    test.ok(+hands[3] > +hands[0], 'Hand #3 is stronger than hand #0');
 
-    test.ok(hands[0].valueOf() < hands[1].valueOf(), 'Hand #0 is weaker than hand #1');
-    test.ok(hands[0].valueOf() < hands[2].valueOf(), 'Hand #0 is weaker than hand #2');
-    test.ok(hands[0].valueOf() < hands[3].valueOf(), 'Hand #0 is weaker than hand #3');
+    test.ok(+hands[0] < +hands[1], 'Hand #0 is weaker than hand #1');
+    test.ok(+hands[0] < +hands[2], 'Hand #0 is weaker than hand #2');
+    test.ok(+hands[0] < +hands[3], 'Hand #0 is weaker than hand #3');
 
     test.done();
 };
@@ -27,13 +27,13 @@ exports.flushBeatsStraight = function (test) {
 
     test.equal(hands[4].getHandText(), 'Straight', 'Hand #4 is a straight');
 
-    test.ok(hands[1].valueOf() > hands[4].valueOf(), 'Hand #1 is stronger than hand #4');
-    test.ok(hands[2].valueOf() > hands[4].valueOf(), 'Hand #2 is stronger than hand #4');
-    test.ok(hands[3].valueOf() > hands[4].valueOf(), 'Hand #3 is stronger than hand #4');
+    test.ok(+hands[1] > +hands[4], 'Hand #1 is stronger than hand #4');
+    test.ok(+hands[2] > +hands[4], 'Hand #2 is stronger than hand #4');
+    test.ok(+hands[3] > +hands[4], 'Hand #3 is stronger than hand #4');
 
-    test.ok(hands[4].valueOf() < hands[1].valueOf(), 'Hand #4 is weaker than hand #1');
-    test.ok(hands[4].valueOf() < hands[2].valueOf(), 'Hand #4 is weaker than hand #2');
-    test.ok(hands[4].valueOf() < hands[3].valueOf(), 'Hand #4 is weaker than hand #3');
+    test.ok(+hands[4] < +hands[1], 'Hand #4 is weaker than hand #1');
+    test.ok(+hands[4] < +hands[2], 'Hand #4 is weaker than hand #2');
+    test.ok(+hands[4] < +hands[3], 'Hand #4 is weaker than hand #3');
 
     test.done();
 };
@@ -44,13 +44,13 @@ exports.aceHighFlushBeatsLowerFlush = function (test) {
     test.equal(hands[2].getHandText(), 'Flush', 'Hand #2 is a flush');
     test.equal(hands[3].getHandText(), 'Flush', 'Hand #3 is a flush');
 
-    test.ok(hands[3].valueOf() > hands[2].valueOf(), 'Hand #2 is stronger than hand #3');
-    test.ok(hands[2].valueOf() > hands[1].valueOf(), 'Hand #3 is stronger than hand #1');
-    test.ok(hands[3].valueOf() > hands[1].valueOf(), 'Hand #2 is stronger than hand #1');
+    test.ok(+hands[3] > +hands[2], 'Hand #2 is stronger than hand #3');
+    test.ok(+hands[2] > +hands[1], 'Hand #3 is stronger than hand #1');
+    test.ok(+hands[3] > +hands[1], 'Hand #2 is stronger than hand #1');
 
-    test.ok(hands[2].valueOf() < hands[3].valueOf(), 'Hand #2 is weaker than hand #3');
-    test.ok(hands[1].valueOf() < hands[2].valueOf(), 'Hand #1 is weaker than hand #2');
-    test.ok(hands[1].valueOf() < hands[3].valueOf(), 'Hand #1 is weaker than hand #3');
+    test.ok(+hands[2] < +hands[3], 'Hand #2 is weaker than hand #3');
+    test.ok(+hands[1] < +hands[2], 'Hand #1 is weaker than hand #2');
+    test.ok(+hands[1] < +hands[3], 'Hand #1 is weaker than hand #3');
 
     test.done();
 };
