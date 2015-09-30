@@ -1,63 +1,42 @@
 var Hand = require('../lib/Hand.js');
 
-var hands = [];
-hands[0] = new Hand(['4c', '5d', 'Td', '4s', 'Ah']); // One pair 4s, ace, ten, 5 kicker
-hands[1] = new Hand(['4h', '3h', '9h', 'Jh', '6h']); // Flush jack, nine, six, four, three
-hands[2] = new Hand(['9d', '4d', '8d', '3d', 'Jd']); // Flush jack, nine, eight, four, three
-hands[3] = new Hand(['Ac', 'Tc', '4c', 'Kc', '9c']); // Flush ace, king, ten, nine, four
-hands[4] = new Hand(['Jd', 'Tc', '7c', '8s', '9c']); // Straight, Jack high
-hands[5] = new Hand(['2c', '4d', '3c', '5s', 'Ad']); // Straight, five high
+var hands = [
+['4c', '5d', 'Td', '4s', 'Ah'], // One pair 4s, ace, ten, 5 kicker
+['2c', '4d', '3c', '5s', 'Ad'], // Straight, five high
+['Jd', 'Tc', '7c', '8s', '9c'], // Straight, jack high
+['4h', '3h', '9h', 'Jh', '6h'], // Flush jack, nine, six, four, three
+['9d', '4d', '8d', '3d', 'Jd'], // Flush jack, nine, eight, four, three
+['Ac', 'Tc', '4c', 'Kc', '9c'], // Flush ace, king, ten, nine, four
+['9s', '4s', 'Ts', 'As', 'Ks'], // Flush ace, king, ten, nine, four (different suit)
+['4d', '4h', 'Ad', '4s', 'As'], // Full fouse, fours over aces
+['5s', '5d', '5c', 'Js', 'Jh'], // Full fouse, fives over jacks
+['4d', 'Ah', 'Ad', '4s', 'As'], // Full fouse, aces over fours
+['4d', '4h', '4c', '4s', '2d'], // Four of a kind, fours (deuce kicker)
+['4d', '4h', '4c', '4s', 'Ac'], // Four of a kind, fours (ace kicker)
+['4h', '5h', '6h', '7h', '8h'], // Straight flush, eight high
+];
 
-exports.flushBeatsOnePair = function (test) {
+// Convert to Hand objects
+hands = hands.map(function(hand){
+    return new Hand(hand);
+});
 
-    test.equal(hands[0].getHandText(), 'One pair', 'Hand #0 is one pair');
+exports.comparisons = function (test) {
 
-    test.ok(+hands[1] > +hands[0], 'Hand #1 is stronger than hand #0');
-    test.ok(+hands[2] > +hands[0], 'Hand #2 is stronger than hand #0');
-    test.ok(+hands[3] > +hands[0], 'Hand #3 is stronger than hand #0');
+    for (var i = 0; i < hands.length; i++) {
+        for (var j = 0; j < hands.length; j++) {
 
-    test.ok(+hands[0] < +hands[1], 'Hand #0 is weaker than hand #1');
-    test.ok(+hands[0] < +hands[2], 'Hand #0 is weaker than hand #2');
-    test.ok(+hands[0] < +hands[3], 'Hand #0 is weaker than hand #3');
+            if (i === j) {
+                continue;
+            }
 
-    test.done();
-};
-
-exports.flushBeatsStraight = function (test) {
-
-    test.equal(hands[4].getHandText(), 'Straight', 'Hand #4 is a straight');
-
-    test.ok(+hands[1] > +hands[4], 'Hand #1 is stronger than hand #4');
-    test.ok(+hands[2] > +hands[4], 'Hand #2 is stronger than hand #4');
-    test.ok(+hands[3] > +hands[4], 'Hand #3 is stronger than hand #4');
-
-    test.ok(+hands[4] < +hands[1], 'Hand #4 is weaker than hand #1');
-    test.ok(+hands[4] < +hands[2], 'Hand #4 is weaker than hand #2');
-    test.ok(+hands[4] < +hands[3], 'Hand #4 is weaker than hand #3');
-
-    test.done();
-};
-
-exports.aceHighFlushBeatsLowerFlush = function (test) {
-
-    test.equal(hands[1].getHandText(), 'Flush', 'Hand #1 is a flush');
-    test.equal(hands[2].getHandText(), 'Flush', 'Hand #2 is a flush');
-    test.equal(hands[3].getHandText(), 'Flush', 'Hand #3 is a flush');
-
-    test.ok(+hands[3] > +hands[2], 'Hand #2 is stronger than hand #3');
-    test.ok(+hands[2] > +hands[1], 'Hand #3 is stronger than hand #1');
-    test.ok(+hands[3] > +hands[1], 'Hand #2 is stronger than hand #1');
-
-    test.ok(+hands[2] < +hands[3], 'Hand #2 is weaker than hand #3');
-    test.ok(+hands[1] < +hands[2], 'Hand #1 is weaker than hand #2');
-    test.ok(+hands[1] < +hands[3], 'Hand #1 is weaker than hand #3');
-
-    test.done();
-};
-
-exports.wheelStraight = function (test) {
-
-    test.equal(hands[5].getHandText(), 'Straight', 'Hand #5 is a straight');
+            if (i < j) {
+                test.ok(+hands[i] <= +hands[j], 'Hand #' + i + ' (' + hands[i].getHandText() + ') is weaker than hand #' + j + ' (' + hands[j].getHandText() + ')');
+            } else {
+                test.ok(+hands[i] >= +hands[j], 'Hand #' + i + ' (' + hands[i].getHandText() + ') is stronger than hand #' + j + ' (' + hands[j].getHandText() + ')');
+            }
+        }
+    }
 
     test.done();
 };
