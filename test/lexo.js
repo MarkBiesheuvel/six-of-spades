@@ -1,19 +1,18 @@
-
 var LexographicalNumber = require('../lib/LexographicalNumber');
 
 exports.powersOfSixteen = function (test) {
 
     var f = LexographicalNumber(10, 3); // 10 doesn't fit in 3 bits (0-7), so we need 4 bits (0-15)
 
-    test.equal(f(),          0);
-    test.equal(f(0),         0);
-    test.equal(f(0, 0),      0);
-    test.equal(f(0, 0, 0),   0);
-    test.equal(f(0, 0, 1),   1);
-    test.equal(f(0, 1, 0),  16);
-    test.equal(f(1, 0, 0), 256);
-    test.equal(f(1, 0),    256);
-    test.equal(f(1),       256);
+    test.equal(f(), /*        */ 0);
+    test.equal(f(0), /*       */ 0);
+    test.equal(f(0, 0), /*    */ 0);
+    test.equal(f(0, 0, 0), /* */ 0);
+    test.equal(f(0, 0, 1), /* */ 1);
+    test.equal(f(0, 1, 0), /* */ 16);
+    test.equal(f(1, 0, 0), /* */ 256);
+    test.equal(f(1, 0), /*    */ 256);
+    test.equal(f(1), /*       */ 256);
 
     test.done();
 };
@@ -63,24 +62,24 @@ exports.comparisons = function (test) {
     var f = LexographicalNumber(7, 4);
 
     var cases = [
-    [],
-    [0, 0, 1],
-    [0, 1],
-    [0, 7],
-    [0, 7, 7, 7],
-    [1],
-    [1, 1, 1, 0],
-    [1, 1, 1, 1],
-    [1, 1, 2, 0],
-    [7, 7, 7, 7]
+        [],
+        [0, 0, 1],
+        [0, 1],
+        [0, 7],
+        [0, 7, 7, 7],
+        [1],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1],
+        [1, 1, 2, 0],
+        [7, 7, 7, 7]
     ];
 
-    for(var i = 0; i < cases.length; i++){
-        for(var j = (i + 1); j<cases.length; j++){
+    for (var i = 0; i < cases.length; i++) {
+        for (var j = (i + 1); j < cases.length; j++) {
             test.ok(
                 f.apply(null, cases[i]) < f.apply(null, cases[j]),
                 'Case #' + i + ' is smaller than case #' + j
-                );
+            );
         }
     }
 

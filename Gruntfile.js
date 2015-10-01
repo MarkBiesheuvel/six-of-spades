@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             all: ['test/*.js']
         },
         watch: {
-            gruntfile : {
+            gruntfile: {
                 files: ['Gruntfile.js'],
                 options: {
                     reload: true
