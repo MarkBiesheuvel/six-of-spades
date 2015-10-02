@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         jshint: {
             all: {
                 src: ['index.js', 'lib/**/*.js', 'test/*.js']
@@ -17,7 +18,7 @@ module.exports = function (grunt) {
                 }
             },
             all: {
-                files: ['index.js', 'lib/**/*.js', 'test/*.js'],
+                files: ['index.js', 'lib/**/*.js', 'test/*.*'],
                 tasks: ['jshint', 'nodeunit'],
                 options: {
                     interrupt: true
