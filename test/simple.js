@@ -18,9 +18,9 @@ exports.comparisons = function (test) {
             }
 
             if (i < j) {
-                test.ok(+hands[i] < +hands[j], 'Hand #' + i + ' (' + hands[i].getHandText() + ') is weaker than hand #' + j + ' (' + hands[j].getHandText() + ')');
+                test.ok(+hands[i] < +hands[j], 'Hand #' + i + ' is weaker than hand #' + j);
             } else {
-                test.ok(+hands[i] > +hands[j], 'Hand #' + i + ' (' + hands[i].getHandText() + ') is stronger than hand #' + j + ' (' + hands[j].getHandText() + ')');
+                test.ok(+hands[i] > +hands[j], 'Hand #' + i + ' is stronger than hand #' + j);
             }
         }
     }
@@ -31,7 +31,7 @@ exports.comparisons = function (test) {
 exports.short_names = function (test) {
 
     for (var i = 0; i < hands.length; i++) {
-        test.equal(hands[i].getHandText(), cases[i].short_name, 'Hand #' + i + ' is a ' + cases[i].short_name);
+        test.equal(hands[i].getShortName(), cases[i].short_name, 'Hand #' + i + ' is a ' + cases[i].short_name);
     }
 
     test.done();
