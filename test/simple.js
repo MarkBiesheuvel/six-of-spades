@@ -36,3 +36,12 @@ exports.short_names = function (test) {
 
     test.done();
 };
+
+exports.long_names = function (test) {
+
+    for (var i = 0; i < hands.length; i++) {
+        test.equal(hands[i].getLongName(), cases[i].long_name, 'Hand #' + i + ' is a ' + cases[i].long_name);
+    }
+
+    test.done();
+};
