@@ -22,6 +22,7 @@
   "homepage": "https://github.com/MarkBiesheuvel/poker-hand-evaluator#readme",
   "devDependencies": {
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-nodeunit": "*",
     "grunt-contrib-watch": "*",
