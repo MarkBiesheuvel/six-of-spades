@@ -22,6 +22,12 @@ exports.comparisons = function (test) {
             } else {
                 test.ok(+hands[i] > +hands[j], 'Hand #' + i + ' is stronger than hand #' + j);
             }
+
+        }
+
+        if ('ties_with' in cases[i]) {
+            var ties_with = hands[i] = new Hand(cases[i].ties_with);
+            test.ok(+hands[i] === +ties_with, 'Hand #' + i + 'a is equal to hand #' + i + 'b');
         }
     }
 
