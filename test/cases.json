@@ -33,7 +33,7 @@
     {
         "short_name": "Three of a kind",
         "long_name": "Three of a kind, Sevens",
-        "cards": ["7s", "7h", "2d", "7h", "3s"]
+        "cards": ["7s", "7h", "2d", "7d", "3s"]
     },
     {
         "short_name": "Straight",
