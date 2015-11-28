@@ -1,6 +1,22 @@
-module.exports = function(exports, cases) {
+var Poker = require('../lib/Poker.js');
 
-    exports.comparisons = function (test) {
+[Poker.RANKING_TRADITIONAL].forEach(function (ranking) {
+
+    var poker = new Poker({
+        ranking: ranking
+    });
+
+    var cases = require('./cases/' + ranking + '.json');
+
+    // Find best hand for each of the cases
+    for (var i = 0; i < cases.length; i++) {
+        cases[i].hand = poker.findBestHand(cases[i].cards);
+        if ('ties_with' in cases[i]) {
+            cases[i].ties_with = poker.findBestHand(cases[i].ties_with);
+        }
+    }
+
+    exports[ranking + '-comparisons'] = function (test) {
 
         for (var i = 0; i < cases.length; i++) {
             for (var j = 0; j < cases.length; j++) {
@@ -24,7 +40,7 @@ module.exports = function(exports, cases) {
         test.done();
     };
 
-    exports.short_names = function (test) {
+    exports[ranking + '-short_names'] = function (test) {
 
         for (var i = 0; i < cases.length; i++) {
             test.equal(cases[i].hand.getShortName(), cases[i].short_name, 'Hand #' + i + ' is a ' + cases[i].short_name);
@@ -33,7 +49,7 @@ module.exports = function(exports, cases) {
         test.done();
     };
 
-    exports.long_names = function (test) {
+    exports[ranking + '-long_names'] = function (test) {
 
         for (var i = 0; i < cases.length; i++) {
             test.equal(cases[i].hand.getLongName(), cases[i].long_name, 'Hand #' + i + ' is a ' + cases[i].long_name);
@@ -42,4 +58,4 @@ module.exports = function(exports, cases) {
         test.done();
     };
 
-};
+});

@@ -1,4 +1,4 @@
-var LexographicalNumber = require('../lib/LexographicalNumber');
+var LexographicalNumber = require('../lib/Lexicographic/Numbers');
 
 exports.powersOfSixteen = function (test) {
 
