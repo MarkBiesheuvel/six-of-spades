@@ -1,0 +1,12 @@
+[
+  {
+    "short_name": "",
+    "long_name": "Seven-Five",
+    "cards": ["2d", "3s", "4c", "5c", "7d"]
+  },
+  {
+    "short_name": "",
+    "long_name": "Five-Four",
+    "cards": ["Ac", "2d", "4s", "5d", "3s"]
+  }
+]
