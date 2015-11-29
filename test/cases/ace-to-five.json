@@ -1,5 +1,15 @@
 [
   {
+    "short_name": "One pair",
+    "long_name": "Pair of Threes",
+    "cards": ["3d", "Js", "4d", "7s", "3s"]
+  },
+  {
+    "short_name": "One pair",
+    "long_name": "Pair of Aces",
+    "cards": ["Ad", "Ah", "2d", "Kh", "5s"]
+  },
+  {
     "short_name": "Seven low",
     "long_name": "7,5,4,3,2",
     "cards": ["2d", "3s", "4c", "5c", "7d"]
