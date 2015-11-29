@@ -1,6 +1,6 @@
 var Poker = require('../lib/Poker.js');
 
-[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE].forEach(function (ranking) {
+[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN].forEach(function (ranking) {
 
     var poker = new Poker({
         ranking: ranking
