@@ -51,9 +51,9 @@
         "cards": ["Jd", "Tc", "7c", "8s", "9c"]
     },
     {
-      "short_name": "Straight",
-      "long_name": "Straight, Queen high",
-      "cards": ["5s", "Td", "4h", "6c", "Js", "7d", "9h", "Qs", "8c", "3c", "2c"]
+        "short_name": "Straight",
+        "long_name": "Straight, Queen high",
+        "cards": ["5s", "Td", "4h", "6c", "Js", "7d", "9h", "Qs", "8c", "3c", "2c"]
     },
     {
         "short_name": "Flush",
@@ -82,9 +82,9 @@
         "cards": ["5s", "5d", "5c", "Js", "Jh"]
     },
     {
-      "short_name": "Full house",
-      "long_name": "Full house, Sixes over Kings",
-      "cards": ["6s", "6h", "5d", "5h", "Ks", "Kc", "6d", "5c"]
+        "short_name": "Full house",
+        "long_name": "Full house, Sixes over Kings",
+        "cards": ["6s", "6h", "5d", "5h", "Ks", "Kc", "6d", "5c"]
     },
     {
         "short_name": "Full house",
@@ -115,6 +115,6 @@
         "short_name": "Straight flush",
         "long_name": "Straight flush, Eight high",
         "cards": ["4h", "5h", "6h", "7h", "8h"],
-      "ties_with":["5c", "Td", "4c", "6c", "Js", "7c", "9h", "Qs", "8c", "3c", "2d"]
+        "ties_with":["5c", "Td", "4c", "6c", "Js", "7c", "9h", "Qs", "8c", "3c", "2d"]
     }
 ]
