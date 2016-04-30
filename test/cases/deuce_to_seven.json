@@ -1,0 +1,43 @@
+[
+  {
+    "short_name": "Flush",
+    "long_name": "Flush, Deuces high",
+    "cards": ["2h", "5h", "4h", "6h", "7h"]
+  },
+  {
+    "short_name": "Straight",
+    "long_name": "Straight, Seven high",
+    "cards": ["Jd", "Tc", "7c", "8s", "9c"]
+  },
+  {
+    "short_name": "Straight",
+    "long_name": "Straight, Deuces high",
+    "cards": ["5d", "4c", "2d", "3s", "6h"]
+  },
+  {
+    "short_name": "Two pair",
+    "long_name": "Two pair, Fives and Sixes",
+    "cards": ["6s", "6h", "5d", "5h", "Ks"]
+  },
+  {
+    "short_name": "Two pair",
+    "long_name": "Two pair, Deuces and Threes",
+    "cards": ["2s", "2d", "3h", "5h", "3c"]
+  },
+  {
+    "short_name": "Eight low",
+    "long_name": "8,6,5,4,3",
+    "cards": ["4d", "5s", "3c", "8c", "6d"]
+  },
+  {
+    "short_name": "Seven low",
+    "long_name": "7,6,5,4,2",
+    "cards": ["2d", "5s", "4c", "6c", "7d"]
+  },
+  {
+    "short_name": "Seven low",
+    "long_name": "7,5,4,3,2",
+    "cards": ["5s", "Td", "4h", "6c", "Js", "7d", "9h", "Qs", "8c", "3c", "2c"],
+    "ties_with": ["2d", "3s", "4c", "5c", "7d", "8d", "9c"]
+  }
+]
