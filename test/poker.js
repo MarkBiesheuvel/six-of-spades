@@ -1,10 +1,10 @@
-var Poker = require('../lib/Poker.js');
+const Poker = require('../lib/Poker.js');
 
 [Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN].forEach((ranking) => {
 
-    var poker = new Poker({ranking});
+    let poker = new Poker({ranking});
 
-    var cases = require(`./cases/${ranking}.json`);
+    let cases = require(`./cases/${ranking}.json`);
 
     // Find best hand for each of the cases
     cases.forEach((c) => {
