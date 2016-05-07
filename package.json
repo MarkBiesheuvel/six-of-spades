@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarkBiesheuvel/poker-hand-evaluator.git"
+    "url": "git+https://github.com/MarkBiesheuvel/six-of-spades.git"
   },
   "keywords": [
     "poker",
@@ -23,9 +23,9 @@
   "author": "Mark Biesheuvel <mail@markbiesheuvel.nl> (http://markbiesheuvel.nl)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarkBiesheuvel/poker-hand-evaluator/issues"
+    "url": "https://github.com/MarkBiesheuvel/six-of-spades/issues"
   },
-  "homepage": "https://github.com/MarkBiesheuvel/poker-hand-evaluator#readme",
+  "homepage": "https://github.com/MarkBiesheuvel/six-of-spades#readme",
   "devDependencies": {
     "grunt": "*",
     "grunt-cli": "*",
