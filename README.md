@@ -1,4 +1,4 @@
-# 6♠ - Six of spades  [![Build Status](https://travis-ci.org/MarkBiesheuvel/six-of-spades.svg?branch=master)](https://travis-ci.org/MarkBiesheuvel/poker-hand-evaluator)
+# 6♠ - Six of spades  [![Build Status](https://travis-ci.org/MarkBiesheuvel/six-of-spades.svg?branch=master)](https://travis-ci.org/MarkBiesheuvel/six-of-spades)
 
 A fully configurable poker game engine
 
