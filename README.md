@@ -19,7 +19,7 @@ What would a library be without some code examples.
 
 With variants like Hold'Em or Stud it is usefull to find the best hand combination out of a list of cards.
 
-    const Poker = require('./lib/Poker.js');
+    const Poker = require("six-of-spades");
 
     let poker = new Poker();
 
@@ -36,7 +36,7 @@ With variants like Hold'Em or Stud it is usefull to find the best hand combinati
 Here is an example using Ace-to-five low instead of the traditional ranking.
 Allowed values are `Poker.RANKING_TRADITIONAL`, `Poker.RANKING_ACE_TO_FIVE`, and `Poker.RANKING_DEUCE_TO_SEVEN`.
 
-    const Poker = require('./lib/Poker.js');
+    const Poker = require("six-of-spades");
 
     let poker = new Poker({
         ranking: Poker.RANKING_ACE_TO_FIVE
