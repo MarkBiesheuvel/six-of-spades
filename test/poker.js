@@ -1,59 +1,56 @@
-var Poker = require('../lib/Poker.js');
+const Poker = require('../lib/Poker.js');
 
-[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN].forEach(function (ranking) {
+[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN].forEach((ranking) => {
 
-    var poker = new Poker({
-        ranking: ranking
-    });
+    let poker = new Poker({ranking});
 
-    var cases = require('./cases/' + ranking + '.json');
+    let cases = require(`./cases/${ranking}.json`);
 
     // Find best hand for each of the cases
-    for (var i = 0; i < cases.length; i++) {
-        cases[i].hand = poker.findBestHand(cases[i].cards);
-        if ('ties_with' in cases[i]) {
-            cases[i].ties_with = poker.findBestHand(cases[i].ties_with);
+    cases.forEach((c) => {
+        c.hand = poker.findBestHand(c.cards);
+        if ('ties_with' in c) {
+            c.ties_with = poker.findBestHand(c.ties_with);
         }
-    }
+    });
 
-    exports[ranking + '-comparisons'] = function (test) {
+    exports[`${ranking}-comparisons`] = (test) => {
 
-        for (var i = 0; i < cases.length; i++) {
-            for (var j = 0; j < cases.length; j++) {
+        cases.forEach(({hand, ties_with}, i) => {
+
+            cases.forEach(({hand: other}, j) => {
 
                 if (i === j) {
-                    continue;
-                }
-
-                if (i < j) {
-                    test.ok(+cases[i].hand < +cases[j].hand, 'Hand #' + i + ' is weaker than hand #' + j);
+                    // No test
+                } else if (i < j) {
+                    test.ok(+hand < +other, `Hand #${i} is weaker than hand #${j}`);
                 } else {
-                    test.ok(+cases[i].hand > +cases[j].hand, 'Hand #' + i + ' is stronger than hand #' + j);
+                    test.ok(+hand > +other, `Hand #${i} is stronger than hand #${j}`);
                 }
-            }
+            });
 
-            if ('ties_with' in cases[i]) {
-                test.ok(+cases[i].hand === +cases[i].ties_with, 'Hand #' + i + 'a is equal to hand #' + i + 'b');
+            if (ties_with) {
+                test.ok(+hand === +ties_with, `Hand #${i}a is equal to hand #${i}b`);
             }
-        }
+        });
 
         test.done();
     };
 
-    exports[ranking + '-short_names'] = function (test) {
+    exports[`${ranking}-short_names`] = (test) => {
 
-        for (var i = 0; i < cases.length; i++) {
-            test.equal(cases[i].hand.getShortName(), cases[i].short_name, 'Hand #' + i + ' is a ' + cases[i].short_name);
-        }
+        cases.forEach(({hand, short_name}, i) => {
+            test.equal(hand.getShortName(), short_name, `Hand #${i} is a ${short_name}`);
+        });
 
         test.done();
     };
 
-    exports[ranking + '-long_names'] = function (test) {
+    exports[`${ranking}-long_names`] = (test) => {
 
-        for (var i = 0; i < cases.length; i++) {
-            test.equal(cases[i].hand.getLongName(), cases[i].long_name, 'Hand #' + i + ' is a ' + cases[i].long_name);
-        }
+        cases.forEach(({hand, long_name}, i) => {
+            test.equal(hand.getLongName(), long_name, `Hand #${i} is a ${long_name}`);
+        });
 
         test.done();
     };
