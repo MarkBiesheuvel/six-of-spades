@@ -1,7 +1,7 @@
 {
-  "name": "poker-hand-evaluator",
-  "version": "1.2.0",
-  "description": "Poker game engine.",
+  "name": "six-of-spades",
+  "version": "1.3.0",
+  "description": "A fully configurable poker game engine",
   "main": "index.js",
   "scripts": {
     "test": "grunt nodeunit"
@@ -12,9 +12,15 @@
   },
   "keywords": [
     "poker",
-    "hand evaluation"
+    "holdhem",
+    "ace-to-five",
+    "deuce-to-seven"
   ],
-  "author": "Mark Biesheuvel <mail@markbiesheuvel.nl>",
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "author": "Mark Biesheuvel <mail@markbiesheuvel.nl> (http://markbiesheuvel.nl)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MarkBiesheuvel/poker-hand-evaluator/issues"
@@ -29,7 +35,6 @@
     "load-grunt-tasks": "*"
   },
   "dependencies": {
-    "pluralize": "*",
-    "sprintf-js": "*"
+    "pluralize": "*"
   }
 }
