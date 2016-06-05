@@ -1,6 +1,6 @@
 const Poker = require('../lib/Poker.js');
 
-[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN].forEach((ranking) => {
+[Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN, Poker.RANKING_BADUGI].forEach((ranking) => {
 
     let poker = new Poker({ranking});
 
