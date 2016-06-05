@@ -50,6 +50,18 @@ exports.choose0 = (test) => {
     test.done();
 };
 
+
+exports.chooseAll = (test) => {
+
+    let it = new CombinationIterator([1, 2, 3, 4, 5], 5);
+    var obj = it.iterator();
+
+    test.deepEqual(obj.next().value, [1, 2, 3, 4, 5]);
+    test.ok(obj.next().done);
+
+    test.done();
+};
+
 exports.errors = (test) => {
 
     test.throws(() => {
