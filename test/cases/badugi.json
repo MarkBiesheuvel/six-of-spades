@@ -1,92 +1,92 @@
 [
   {
-    "short_name": "One-card hand",
-    "long_name": "5-x-x-x",
+    "shortName": "One-card hand",
+    "longName": "5-x-x-x",
     "cards": ["Qd", "Jd", "8d", "5d"]
   },
   {
-    "short_name": "One-card hand",
-    "long_name": "4-x-x-x",
+    "shortName": "One-card hand",
+    "longName": "4-x-x-x",
     "cards": ["Ks", "Js", "9s", "4s"]
   },
   {
-    "short_name": "One-card hand",
-    "long_name": "A-x-x-x",
+    "shortName": "One-card hand",
+    "longName": "A-x-x-x",
     "cards": ["Ac", "As", "Ad", "Ah"]
   },
   {
-    "short_name": "Two-card hand",
-    "long_name": "Q-J-x-x",
+    "shortName": "Two-card hand",
+    "longName": "Q-J-x-x",
     "cards": ["Qs", "Jd", "Js", "Jc"]
   },
   {
-    "short_name": "Two-card hand",
-    "long_name": "T-9-x-x",
+    "shortName": "Two-card hand",
+    "longName": "T-9-x-x",
     "cards": ["Tc", "Td", "9c", "9d"]
   },
   {
-    "short_name": "Two-card hand",
-    "long_name": "7-6-x-x",
+    "shortName": "Two-card hand",
+    "longName": "7-6-x-x",
     "cards": ["9s", "8s", "7s", "6c"]
   },
   {
-    "short_name": "Two-card hand",
-    "long_name": "2-A-x-x",
+    "shortName": "Two-card hand",
+    "longName": "2-A-x-x",
     "cards": ["3c", "2c", "As", "Ad"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "K-2-A-x",
+    "shortName": "Three-card hand",
+    "longName": "K-2-A-x",
     "cards": ["Kc", "Kd", "2d", "Ah"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "Q-2-A-x",
+    "shortName": "Three-card hand",
+    "longName": "Q-2-A-x",
     "cards": ["Qc", "Qs", "2d", "Ah"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "J-T-9-x",
+    "shortName": "Three-card hand",
+    "longName": "J-T-9-x",
     "cards": ["Qs", "Js", "Tc", "9d"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "J-T-6-x",
+    "shortName": "Three-card hand",
+    "longName": "J-T-6-x",
     "cards": ["Qs", "Js", "Tc", "6d"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "J-8-6-x",
+    "shortName": "Three-card hand",
+    "longName": "J-8-6-x",
     "cards": ["Ks", "Js", "8c", "6d"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "4-2-A-x",
+    "shortName": "Three-card hand",
+    "longName": "4-2-A-x",
     "cards": ["4d", "3c", "2c", "As"]
   },
   {
-    "short_name": "Three-card hand",
-    "long_name": "3-2-A-x",
+    "shortName": "Three-card hand",
+    "longName": "3-2-A-x",
     "cards": ["3d", "3c", "2s", "Ah"]
   },
   {
-    "short_name": "Badugi",
-    "long_name": "K-Q-J-T",
+    "shortName": "Badugi",
+    "longName": "K-Q-J-T",
     "cards": ["Kc", "Qd", "Js", "Th"]
   },
   {
-    "short_name": "Badugi",
-    "long_name": "8-7-2-A",
+    "shortName": "Badugi",
+    "longName": "8-7-2-A",
     "cards": ["8c", "7s", "2h", "Ad"]
   },
   {
-    "short_name": "Badugi",
-    "long_name": "8-5-4-2",
+    "shortName": "Badugi",
+    "longName": "8-5-4-2",
     "cards": ["8c", "5s", "4h", "2d"]
   },
   {
-    "short_name": "Badugi",
-    "long_name": "4-3-2-A",
+    "shortName": "Badugi",
+    "longName": "4-3-2-A",
     "cards": ["4s", "3h", "2d", "Ac"]
   }
 ]

@@ -3,7 +3,7 @@ const CombinationIterator = require('../lib/Combination/Iterator.js');
 exports.AbcdChoose3 = (test) => {
 
     let it = new CombinationIterator(['A', 'B', 'C', 'D'], 3);
-    var obj = it.iterator();
+    let obj = it.iterator();
 
     test.deepEqual(obj.next().value, ['A', 'B', 'C']);
     test.deepEqual(obj.next().value, ['A', 'B', 'D']);
@@ -17,7 +17,7 @@ exports.AbcdChoose3 = (test) => {
 exports.chooseFruitSalad = (test) => {
 
     let it = new CombinationIterator(['Banana', 'Pineapple', 'Strawberry', 'Blueberry', 'Mandarin', 'Orange'], 2);
-    var obj = it.iterator();
+    let obj = it.iterator();
 
     test.deepEqual(obj.next().value, ['Banana', 'Pineapple']);
     test.deepEqual(obj.next().value, ['Banana', 'Strawberry']);
@@ -42,7 +42,7 @@ exports.chooseFruitSalad = (test) => {
 exports.choose0 = (test) => {
 
     let it = new CombinationIterator([], 0);
-    var obj = it.iterator();
+    let obj = it.iterator();
 
     test.deepEqual(obj.next().value, []);
     test.ok(obj.next().done);
@@ -54,7 +54,7 @@ exports.choose0 = (test) => {
 exports.chooseAll = (test) => {
 
     let it = new CombinationIterator([1, 2, 3, 4, 5], 5);
-    var obj = it.iterator();
+    let obj = it.iterator();
 
     test.deepEqual(obj.next().value, [1, 2, 3, 4, 5]);
     test.ok(obj.next().done);
@@ -65,13 +65,12 @@ exports.chooseAll = (test) => {
 exports.errors = (test) => {
 
     test.throws(() => {
-        let it = new CombinationIterator([1, 2], -1);
+        new CombinationIterator([1, 2], -1);
     });
 
     test.throws(() => {
-        let it = new CombinationIterator([], 1);
+        new CombinationIterator([], 1);
     });
-
 
     test.done();
 };

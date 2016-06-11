@@ -1,58 +1,58 @@
 const Poker = require('../lib/Poker.js');
+const fs = require('fs');
 
 [Poker.RANKING_TRADITIONAL, Poker.RANKING_ACE_TO_FIVE, Poker.RANKING_DEUCE_TO_SEVEN, Poker.RANKING_BADUGI].forEach((ranking) => {
 
-    let poker = new Poker({ranking});
+    exports[ranking] = (test) => {
 
-    let cases = require(`./cases/${ranking}.json`);
+        let poker = new Poker({ranking});
 
-    // Find best hand for each of the cases
-    cases.forEach((c) => {
-        c.hand = poker.findBestHand(c.cards);
-        if ('ties_with' in c) {
-            c.ties_with = poker.findBestHand(c.ties_with);
-        }
-    });
+        fs.readFile(`./test/cases/${ranking}.json`, 'utf8', (err, data) => {
 
-    exports[`${ranking}-comparisons`] = (test) => {
+            if (err) {
+                throw err;
+            }
 
-        cases.forEach(({hand, ties_with}, i) => {
+            let cases = JSON.parse(data);
 
-            cases.forEach(({hand: other}, j) => {
-
-                if (i === j) {
-                    // No test
-                } else if (i < j) {
-                    test.ok(+hand < +other, `Hand #${i} is weaker than hand #${j}`);
-                } else {
-                    test.ok(+hand > +other, `Hand #${i} is stronger than hand #${j}`);
+            // Find best hand for each of the cases
+            cases.forEach((c) => {
+                c.hand = poker.findBestHand(c.cards);
+                if ('tiesWith' in c) {
+                    c.tiesWith = poker.findBestHand(c.tiesWith);
                 }
             });
 
-            if (ties_with) {
-                test.ok(+hand === +ties_with, `Hand #${i}a is equal to hand #${i}b`);
-            }
+            // Test short names
+            cases.forEach(({hand, shortName}, i) => {
+                test.equal(hand.getShortName(), shortName, `Hand #${i} is a ${shortName}`);
+            });
+
+            // Test long names
+            cases.forEach(({hand, longName}, i) => {
+                test.equal(hand.getLongName(), longName, `Hand #${i} is a ${longName}`);
+            });
+
+            // Test comparisons
+            cases.forEach(({hand, tiesWith}, i) => {
+
+                cases.forEach(({hand: other}, j) => {
+
+                    if (i === j) {
+                        // No test
+                    } else if (i < j) {
+                        test.ok(hand.valueOf() < other.valueOf(), `Hand #${i} is weaker than hand #${j}`);
+                    } else {
+                        test.ok(hand.valueOf() > other.valueOf(), `Hand #${i} is stronger than hand #${j}`);
+                    }
+                });
+
+                if (tiesWith) {
+                    test.ok(hand.valueOf() === tiesWith.valueOf(), `Hand #${i}a is equal to hand #${i}b`);
+                }
+            });
+
+            test.done();
         });
-
-        test.done();
     };
-
-    exports[`${ranking}-short_names`] = (test) => {
-
-        cases.forEach(({hand, short_name}, i) => {
-            test.equal(hand.getShortName(), short_name, `Hand #${i} is a ${short_name}`);
-        });
-
-        test.done();
-    };
-
-    exports[`${ranking}-long_names`] = (test) => {
-
-        cases.forEach(({hand, long_name}, i) => {
-            test.equal(hand.getLongName(), long_name, `Hand #${i} is a ${long_name}`);
-        });
-
-        test.done();
-    };
-
 });

@@ -1,120 +1,120 @@
 [
     {
-        "short_name": "High card",
-        "long_name": "Seven high",
+        "shortName": "High card",
+        "longName": "Seven high",
         "cards": ["2d", "3s", "4c", "5c", "7d"]
     },
     {
-        "short_name": "High card",
-        "long_name": "Nine high",
+        "shortName": "High card",
+        "longName": "Nine high",
         "cards": ["2d", "3s", "4c", "5c", "7d", "8d", "9c"]
     },
     {
-        "short_name": "One pair",
-        "long_name": "Pair of Fours",
+        "shortName": "One pair",
+        "longName": "Pair of Fours",
         "cards": ["4c", "5d", "Td", "4s", "Ah"]
     },
     {
-        "short_name": "Two pair",
-        "long_name": "Two pair, Sixes and Fives",
+        "shortName": "Two pair",
+        "longName": "Two pair, Sixes and Fives",
         "cards": ["6s", "6h", "5d", "5h", "Ks"]
     },
     {
-        "short_name": "Two pair",
-        "long_name": "Two pair, Sixes and Fives",
+        "shortName": "Two pair",
+        "longName": "Two pair, Sixes and Fives",
         "cards": ["6s", "6h", "5d", "5h", "As"]
     },
     {
-        "short_name": "Two pair",
-        "long_name": "Two pair, Sevens and Deuces",
+        "shortName": "Two pair",
+        "longName": "Two pair, Sevens and Deuces",
         "cards": ["7s", "7h", "2d", "2h", "3s"],
-        "ties_with": ["7s", "2h", "2d", "7h", "3s"]
+        "tiesWith": ["7s", "2h", "2d", "7h", "3s"]
     },
     {
-        "short_name": "Two pair",
-        "long_name": "Two pair, Sevens and Threes",
+        "shortName": "Two pair",
+        "longName": "Two pair, Sevens and Threes",
         "cards": ["7s", "7h", "2d", "3h", "3s"]
     },
     {
-        "short_name": "Three of a kind",
-        "long_name": "Three of a kind, Sevens",
+        "shortName": "Three of a kind",
+        "longName": "Three of a kind, Sevens",
         "cards": ["7s", "7h", "2d", "7d", "3s"]
     },
     {
-        "short_name": "Straight",
-        "long_name": "Straight, Five high",
+        "shortName": "Straight",
+        "longName": "Straight, Five high",
         "cards": ["2c", "4d", "3c", "5s", "Ad"]
     },
     {
-        "short_name": "Straight",
-        "long_name": "Straight, Jack high",
+        "shortName": "Straight",
+        "longName": "Straight, Jack high",
         "cards": ["Jd", "Tc", "7c", "8s", "9c"]
     },
     {
-        "short_name": "Straight",
-        "long_name": "Straight, Queen high",
+        "shortName": "Straight",
+        "longName": "Straight, Queen high",
         "cards": ["5s", "Td", "4h", "6c", "Js", "7d", "9h", "Qs", "8c", "3c", "2c"]
     },
     {
-        "short_name": "Flush",
-        "long_name": "Flush, Jack high",
+        "shortName": "Flush",
+        "longName": "Flush, Jack high",
         "cards": ["4h", "3h", "9h", "Jh", "6h"]
     },
     {
-        "short_name": "Flush",
-        "long_name": "Flush, Jack high",
+        "shortName": "Flush",
+        "longName": "Flush, Jack high",
         "cards": ["9d", "4d", "8d", "3d", "Jd"]
     },
     {
-        "short_name": "Flush",
-        "long_name": "Flush, Ace high",
+        "shortName": "Flush",
+        "longName": "Flush, Ace high",
         "cards": ["Ac", "Tc", "4c", "Kc", "9c"],
-        "ties_with": ["9s", "4s", "Ts", "As", "Ks"]
+        "tiesWith": ["9s", "4s", "Ts", "As", "Ks"]
     },
     {
-        "short_name": "Full house",
-        "long_name": "Full house, Fours over Aces",
+        "shortName": "Full house",
+        "longName": "Full house, Fours over Aces",
         "cards": ["4d", "4h", "Ad", "4s", "As"]
     },
     {
-        "short_name": "Full house",
-        "long_name": "Full house, Fives over Jacks",
+        "shortName": "Full house",
+        "longName": "Full house, Fives over Jacks",
         "cards": ["5s", "5d", "5c", "Js", "Jh"]
     },
     {
-        "short_name": "Full house",
-        "long_name": "Full house, Sixes over Kings",
+        "shortName": "Full house",
+        "longName": "Full house, Sixes over Kings",
         "cards": ["6s", "6h", "5d", "5h", "Ks", "Kc", "6d", "5c"]
     },
     {
-        "short_name": "Full house",
-        "long_name": "Full house, Aces over Fours",
+        "shortName": "Full house",
+        "longName": "Full house, Aces over Fours",
         "cards": ["4d", "Ah", "Ad", "4s", "As"]
     },
     {
-        "short_name": "Four of a kind",
-        "long_name": "Four of a kind, Fours",
+        "shortName": "Four of a kind",
+        "longName": "Four of a kind, Fours",
         "cards": ["4d", "4h", "4c", "4s", "2d"]
     },
     {
-        "short_name": "Four of a kind",
-        "long_name": "Four of a kind, Fours",
+        "shortName": "Four of a kind",
+        "longName": "Four of a kind, Fours",
         "cards": ["4d", "4h", "4c", "4s", "Ac"]
     },
     {
-        "short_name": "Four of a kind",
-        "long_name": "Four of a kind, Aces",
+        "shortName": "Four of a kind",
+        "longName": "Four of a kind, Aces",
         "cards": ["Ad", "Ah", "As", "Ks", "Ac"]
     },
     {
-        "short_name": "Straight flush",
-        "long_name": "Straight flush, Five high",
+        "shortName": "Straight flush",
+        "longName": "Straight flush, Five high",
         "cards": ["Ad", "2d", "3d", "4d", "5d"]
     },
     {
-        "short_name": "Straight flush",
-        "long_name": "Straight flush, Eight high",
+        "shortName": "Straight flush",
+        "longName": "Straight flush, Eight high",
         "cards": ["4h", "5h", "6h", "7h", "8h"],
-        "ties_with":["5c", "Td", "4c", "6c", "Js", "7c", "9h", "Qs", "8c", "3c", "2d"]
+        "tiesWith":["5c", "Td", "4c", "6c", "Js", "7c", "9h", "Qs", "8c", "3c", "2d"]
     }
 ]
