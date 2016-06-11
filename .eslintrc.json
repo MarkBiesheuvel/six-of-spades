@@ -40,7 +40,7 @@
     "no-mixed-requires": "error",
     "no-new-require": "error",
     "no-sync": "error",
-    "camelcase": "error",
+//    "camelcase": "error",
     "quotes": [
       "error",
       "single"
