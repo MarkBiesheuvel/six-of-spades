@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "./node_modules/.bin/eslint ./lib ./test",
-    "test": "./node_modules/.bin/nodeunit/ ./test",
+    "test": "./node_modules/.bin/nodeunit ./test",
     "start": " ./node_modules/.bin/watch \"npm test\" ./lib",
     "build": "./node_modules/.bin/jsdoc ./lib -r"
   },
