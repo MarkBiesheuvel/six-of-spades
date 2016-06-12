@@ -4,9 +4,10 @@
   "description": "A fully configurable poker game engine",
   "main": "index.js",
   "scripts": {
-    "pretest": "./node_modules/eslint/bin/eslint.js ./lib ./test",
-    "test": "./node_modules/nodeunit/bin/nodeunit ./test",
-    "start": " ./node_modules/watch/cli.js \"npm test\" ./lib"
+    "pretest": "./node_modules/.bin/eslint ./lib ./test",
+    "test": "./node_modules/.bin/nodeunit/ ./test",
+    "start": " ./node_modules/.bin/watch \"npm test\" ./lib",
+    "build": "./node_modules/.bin/jsdoc ./lib -r"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/MarkBiesheuvel/six-of-spades#readme",
   "devDependencies": {
     "eslint": "*",
+    "jsdoc": "*",
     "nodeunit": "*",
     "watch": "*"
   },

@@ -1,3 +1,15 @@
 language: node_js
 node_js:
-  - "node"
+  - node
+script: npm test && npm run-script build
+deploy:
+  provider: s3
+  access_key_id: AKIAJDUIP2XSTVOPY5XA
+  secret_access_key:
+    secure: pRhVrVlssH8lWRcq3WqLK6mrdjGtn75TKTIpfPKpZIm6nSc/GyeLFRNuXTmdZ1/XNkbPhzj4guB2UNmnvLERE+eXPsPfOzd2RxSu9SDWOyPy17YYhysC1E3dtL2mG91abTycVjm7rXj4RI7poLT2A9T5dNHdiXnhxW1miUQIwUottAcBzJ7EQTgiTPJbMQZAiVrSqbwwi3VCQRc9ke7Zbi6164cfEMPjeXKj2vJK1/iJpdezVIe8jkDQRS8+Sbq7UY6PdZ1rrJ5BJIwlQmnNgn2HT0YdI9HVsuLwuDNzPEtR836JJNUnIaORElfzAuJsxC1Zgro3+XXXs5xIOGS3Tbi44fVyuIKjNjZrbT4CCDyQM89koXjlfrn94sjeJDspfeB7MF1Eh+kjccJ6WDUqmSUH+cPAlP1PsxaZoFfs4SeGkoiE573DCZipdAlMygyLNBujGKkIIkobmiMPeRpSA4fEn/dP0eFrCk7yjZtxWB/Mj9tkcULj34geF2hmXnm63Q+BXUOZlLM84sSDplNYObFo5CytybSlyrdUA096MWZ4FF/gcBAio7fiDh4AkKSoTRlCmj5DJzb9ivWbV+8c0pEY9OdEcQjJY3tDStK8JQ4TOQ+UgWNoaLFc/OEu3dxy6DHFzcmVNrSdJIIJSoWzd5kYc9CLIALxrzyXpjNbK38=
+  bucket: six-of-spades.markbiesheuvel.nl
+  skip_cleanup: true
+  local-dir: out
+  acl: public_read
+  on:
+    repo: MarkBiesheuvel/six-of-spades
