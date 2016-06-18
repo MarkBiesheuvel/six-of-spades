@@ -71,6 +71,7 @@
     "prefer-template": "error"
   },
   "globals": {
-    "Symbol": true
+    "Symbol": true,
+    "Promise": true
   }
 }
