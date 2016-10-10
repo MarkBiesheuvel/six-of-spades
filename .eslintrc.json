@@ -54,7 +54,12 @@
         }
       }
     ],
-    "valid-jsdoc": "error",
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturn": false
+      }
+    ],
     "arrow-body-style": [
       "error",
       "as-needed"
