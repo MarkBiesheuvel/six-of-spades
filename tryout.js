@@ -1,4 +1,4 @@
-(function () {
+(async() => {
 
     const Poker_Player = require('./lib/Poker/Player');
 
@@ -13,31 +13,12 @@
     let state = {};
     let actions = ['call', 'fold', 'raise'];
 
+    for (let i = 0; i < players.length; i++) {
 
-    let go = (i) => {
+        const action = await players[i].act(state, actions);
+        process.stdout.write(`${players[i]} did ${action}\n\n`);
+    }
 
-        if (i >= players.length) {
-            process.stdout.write(`Everyone is done\n`);
-            return;
-        }
-
-        players[i].act(state, actions)
-        .then((action) => {
-
-            process.stdout.write(`${players[i]} did ${action}\n\n`);
-
-            go(i + 1);
-
-        }, () => {
-
-            // TODO: default action?
-            process.stdout.write(`${players[i]} failed to act\n`);
-
-            go(i + 1);
-
-        });
-    };
-
-    go(0);
+    process.stdout.write(`Everyone is done\n`);
 
 })();
