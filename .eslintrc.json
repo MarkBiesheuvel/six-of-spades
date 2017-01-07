@@ -61,7 +61,7 @@
       }
     ],
     "arrow-body-style": [
-      "error",
+      "warn",
       "as-needed"
     ],
     "arrow-parens": [
