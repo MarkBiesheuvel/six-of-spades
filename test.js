@@ -9,9 +9,9 @@ const Poker_Player_Nit = require('./lib/Poker/Player/Nit');
 const ranking = new Poker_Ranking_Traditional();
 const table = new Poker_Table(ranking, 4);
 
-const me = new Poker_Player_IO('Mark');
-const cs = new Poker_Player_CallingStation('Player 1');
-const nt = new Poker_Player_Nit('Player 2');
+const me = new Poker_Player_IO('Mark', 1000);
+const cs = new Poker_Player_CallingStation('Player 1', 2000);
+const nt = new Poker_Player_Nit('Player 2', 1500);
 
 table.addPlayer(0, me);
 table.addPlayer(2, cs);
