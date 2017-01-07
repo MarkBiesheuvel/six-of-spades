@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "eslint ./lib ./test",
     "test": "babel-node test",
-    "start": " watch \"yarn test\" ."
+    "start": " watch \"yarn test\" ./lib"
   },
   "repository": {
     "type": "git",
